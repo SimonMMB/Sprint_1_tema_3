@@ -21,34 +21,34 @@ echo "The array now possess " . count($X) . " elements <br>";
 
 //Exercise 3
 echo "<h3> EXERCISE 3 </h3>";
-function allWordsWChar($words, $character) {
-    $allWordsWChar = false;
-    $wordsWChar = 0;
+function detectCharacter(array $words, string $character) : string {
+    $allWordsWithChar = false;
+    $wordsWithChar = 0;
     foreach ($words as $word) {
         $containsChar = false;
         for ($i = 0; $i < strlen($word) && !$containsChar ; $i++) {
             if (strcasecmp($word[$i], $character) == 0) {
                 $containsChar = true;
-                $wordsWChar += 1;
+                $wordsWithChar += 1;
             }
         }
     }
-    if ($wordsWChar == count($words)) {
-        $allWordsWChar = true;
+    if ($wordsWithChar == count($words)) {
+        $allWordsWithChar = true;
     }
-    if ($allWordsWChar) {
+    if ($allWordsWithChar) {
         $message = "All words contains character '" . $character . "' <br>";
     } else {
-        $message = "From " . count($words) . " words, " . $wordsWChar . " contains character '" . $character . "' <br>";
+        $message = "From " . count($words) . " words, " . $wordsWithChar . " contains character '" . $character . "' <br>";
     }
     return $message;
 }
 $home = ["kitchen", "toilet", "garage", "bedroom"];
 $street = ["cars", "trees", "buildings", "bikes"];
-echo allWordsWChar($home, "e");
-echo allWordsWChar($home, "a");
-echo allWordsWChar($street, "s");
-echo allWordsWChar($street, "a");
+echo detectCharacter($home, "e");
+echo detectCharacter($home, "a");
+echo detectCharacter($street, "s");
+echo detectCharacter($street, "a");
 
 //Exercise 4
 echo "<h3> EXERCISE 4 </h3>";
