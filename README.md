@@ -19,6 +19,6 @@ Associative array: information about yourself: name, age, email, favorite food.
 - Google chrome
 - Git/Github
 
-📋Requirements
+📋 Requirements
 Recomendation: display de execution of the code in navigator.
 
